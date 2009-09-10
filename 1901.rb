@@ -383,7 +383,7 @@ song = Song.new(bloops) do
         4 4 4 4 4 - g + c c
         c c c c c   4 - a g
         4 4 4 4 4   4   g 4 +
-        g[sustain:2.0] g g g g g g g[sustain:0.3]
+        g4[sustain:2.0] g5 g4 g5 g4 g5 g4 g4[sustain:0.3]
       }
     end
 
@@ -391,8 +391,8 @@ song = Song.new(bloops) do
       chorus_phrase_2
 
       voice %{
-        4 4 4 4 4 4 g 4
-        g e e g g e e 4
+        4 4 4 4 4 4 2:g[sustain:0.9]
+        g[sustain:0.3] e e g g e e 4
         4 4 4 4 4 4 e d
         e e e e e f e 4
       }
@@ -405,7 +405,7 @@ song = Song.new(bloops) do
         4 4 4 4 4 - g + c c
         c c c c c   4 - a + e
         4 4 4 4 4   4 - g   4 +
-        g[sustain:2.0] g g g g g g g[sustain:0.3]
+        g4[sustain:2.0] g5 g4 g5 g4 g5 g4 g4[sustain:0.3]
       }
     end
 
@@ -413,8 +413,8 @@ song = Song.new(bloops) do
       chorus_phrase_2
 
       voice %{
-        4 4 4 4 4 4 g 4
-        g e e g g e e 4
+        4 4 4 4 4 4 2:g[sustain:0.9]
+        g[sustain:0.3] e e g g e e 4
         4 4 4 4 4 4 c c
         c c c c c 4 2:e
       }
