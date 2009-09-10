@@ -94,6 +94,7 @@ song = Song.new(bloops) do
   end
 
   sound :bass, Bloops::SAWTOOTH do |s|
+    s.punch = 0.5
     s.decay = 0.0
   end
 
@@ -105,12 +106,13 @@ song = Song.new(bloops) do
   end
 
   5.times do |i|
-    sound "guitar_#{i+1}", Bloops::SQUARE do |s|
+    sound "guitar_#{i+1}", Bloops::SAWTOOTH do |s|
       s.decay = 0.0
     end
   end
 
-  sound :voice, Bloops::SAWTOOTH do |s|
+  sound :voice, Bloops::SQUARE do |s|
+    s.punch = 1.0
     s.sustain = 0.3
     s.decay = 0.0
   end
@@ -244,9 +246,9 @@ song = Song.new(bloops) do
 
   def voice_post_chorus
     voice %{
-      4 4 g[sustain:1.0] 4 c 4 2:g
-      c 4 g[sustain:1.0] 4 c 4 2:g
-      2:e 2   1
+      4 4 2:g[sustain:1.0] c[sustain:0.3] 4 2:g[sustain:1.0]
+      c 4 2:g[sustain:1.0] c[sustain:0.3] 4 2:g[sustain:1.0]
+      2:e[sustain:1.0] 2   1
       1       1
     }
   end    
@@ -307,7 +309,7 @@ song = Song.new(bloops) do
       verse_phrase_1
 
       voice %{
-        4  4  4  4  g  4  g  4
+        4  4  4  4  g[sustain:0.3]  4  g  4
         c  c  g  4  g  4  c  c 
         c  g  4  4  4  4  4  4
         4  4  4  4  4  4  4  4
@@ -381,7 +383,7 @@ song = Song.new(bloops) do
         4 4 4 4 4 - g + c c
         c c c c c   4 - a g
         4 4 4 4 4   4   g 4 +
-        3:g 3:g 3:g 3:g 3:g 3:g
+        g[sustain:2.0] g g g g g g g[sustain:0.3]
       }
     end
 
@@ -403,7 +405,7 @@ song = Song.new(bloops) do
         4 4 4 4 4 - g + c c
         c c c c c   4 - a + e
         4 4 4 4 4   4 - g   4 +
-        3:g 3:g 3:g 3:g 3:g 3:g
+        g[sustain:2.0] g g g g g g g[sustain:0.3]
       }
     end
 
