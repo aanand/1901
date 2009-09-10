@@ -246,10 +246,10 @@ song = Song.new(bloops) do
 
   def voice_post_chorus
     voice %{
-      4 4 2:g[sustain:1.0] c[sustain:0.3] 4 2:g[sustain:1.0]
-      c 4 2:g[sustain:1.0] c[sustain:0.3] 4 2:g[sustain:1.0]
-      2:e[sustain:1.0] 2   1
-      1       1
+      4 4              2:g[sustain:1.0] c[sustain:0.3] 4 2:g[sustain:1.0]
+      c 4              2:g[sustain:1.0] c[sustain:0.3] 4 2:g[sustain:1.0]
+      2:e[sustain:1.0] 2                1
+      1                                 1
     }
   end    
 
