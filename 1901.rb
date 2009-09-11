@@ -75,16 +75,14 @@ song = Song.new(bloops) do
     s.decay = 0.1
   end
 
-  sound :kick, Bloops::NOISE do |s|
-    s.punch = 0.5
-    s.sustain = 0.25
-    s.decay = 0.0
+  sound :kick, Bloops::SINE do |s|
+    s.volume = 0.95
+    s.slide = -0.4
   end
 
-  sound :short_kick, Bloops::NOISE do |s|
-    s.punch = 0.5
-    s.sustain = 0.15
-    s.decay = 0.0
+  sound :short_kick, Bloops::SINE do |s|
+    s.volume = 0.25
+    s.slide = -0.4
   end
 
   sound :snare, Bloops::NOISE do |s|
@@ -122,8 +120,8 @@ song = Song.new(bloops) do
   end
 
   def drum_verse
-    kick  " a2 4 4 4 a2 4 4 4 " * 4
-    snare " 4  4 c 4 4  4 c 4 " * 4
+    kick  " c 4 4 4 c 4 4 4 " * 4
+    snare " 4 4 c 4 4 4 c 4 " * 4
   end
 
   def high_guitar_line_1
@@ -281,16 +279,16 @@ song = Song.new(bloops) do
 
   def verse_phrase_3
     hihat_line
-    kick  " a2 4  4  4  a2 4  4  a2 " * 4
-    snare " 4  4  c  4  4  c  4  4  " * 4
+    kick  " c 4 4 4 c 4 4 c " * 4
+    snare " 4 4 c 4 4 c 4 4 " * 4
     bass_verse
     high_guitar_line_1
   end
 
   def verse_phrase_4
     hihat_line
-    kick  " a2 4  4  4  a2 4  4  a2 " * 4
-    snare " 4  4  c  4  4  c  4  4  " * 4
+    kick  " c 4 4 4 c 4 4 c " * 4
+    snare " 4 4 c 4 4 c 4 4  " * 4
     bass_verse_with_chorus_leadout
     guitar_chorus_leadout
     high_guitar_line_2
@@ -353,8 +351,8 @@ song = Song.new(bloops) do
   end
 
   def chorus_phrase_1
-    kick       " c2 4         4  c2 4         4  c2 4  " * 4
-    short_kick " 4  8:c2 8:c2 c2 4  8:c2 8:c2 c2 4  c2 " * 4
+    kick       " c 4       4 c 4       4 c 4 " * 4
+    short_kick " 4 8:c 8:c c 4 8:c 8:c c 4 c " * 4
     snare %{
       4 4 4 4 4 4 c 4
       4 4 4 4 4 c 4 c
