@@ -423,12 +423,16 @@ song = Song.new(bloops) do
 
   def post_chorus
     phrase do
-      verse_phrase_1
+      drum_verse
+      bass_verse
+      guitar_verse
       voice_post_chorus
     end
 
     phrase do
-      verse_phrase_2
+      drum_verse
+      bass_verse_with_chorus_leadout
+      guitar_verse
       voice_post_chorus
     end
   end
