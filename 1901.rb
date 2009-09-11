@@ -94,7 +94,6 @@ song = Song.new(bloops) do
   end
 
   sound :bass, Bloops::SAWTOOTH do |s|
-    s.punch = 0.5
     s.decay = 0.0
   end
 
@@ -106,14 +105,15 @@ song = Song.new(bloops) do
   end
 
   5.times do |i|
-    sound "guitar_#{i+1}", Bloops::SAWTOOTH do |s|
+    sound "guitar_#{i+1}", Bloops::SQUARE do |s|
+      s.punch = 0.1
       s.decay = 0.0
     end
   end
 
-  sound :voice, Bloops::SQUARE do |s|
-    s.punch = 1.0
-    s.sustain = 0.3
+  sound :voice, Bloops::SAWTOOTH do |s|
+    s.punch = 0.4
+    s.sustain = 0.4
     s.decay = 0.0
   end
 
