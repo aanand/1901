@@ -479,10 +479,6 @@ song = Song.new(bloops) do
   verse_2
   chorus
   post_chorus
-  verse_1
-  verse_2
-  chorus
-  post_chorus
   outro_1
   outro_2
   the_end
