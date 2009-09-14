@@ -23,6 +23,8 @@ class Song
   end
 
   def sound(name, base, &block)
+    name = name.to_sym
+
     sound = bloops.sound(base)
 
     @sounds[name]        = sound
@@ -81,14 +83,19 @@ song = Song.new(bloops) do
   end
 
   sound :short_kick, Bloops::SINE do |s|
-    s.volume = 0.25
+    s.volume = 0.5
     s.slide = -0.4
   end
 
   sound :snare, Bloops::NOISE do |s|
-    s.punch = 0.5
-    s.sustain = 0.25
-    s.decay = 0.0
+    s.volume = 0.9
+    s.sustain = 0.0
+    s.decay = 0.3
+  end
+
+  sound :cymbal, Bloops::NOISE do |s|
+    s.punch = 0.25
+    s.volume = 0.25
   end
 
   sound :bass, Bloops::SAWTOOTH do |s|
@@ -113,6 +120,11 @@ song = Song.new(bloops) do
     s.punch = 0.4
     s.sustain = 0.4
     s.decay = 0.0
+  end
+
+  # initialize octaves
+  def setup
+    @tracks[:snare] << " + "
   end
 
   def hihat_line
@@ -288,7 +300,7 @@ song = Song.new(bloops) do
   def verse_phrase_4
     hihat_line
     kick  " c 4 4 4 c 4 4 c " * 4
-    snare " 4 4 c 4 4 c 4 4  " * 4
+    snare " 4 4 c 4 4 c 4 4 " * 4
     bass_verse_with_chorus_leadout
     guitar_chorus_leadout
     high_guitar_line_2
@@ -366,7 +378,14 @@ song = Song.new(bloops) do
   end
 
   def chorus_phrase_2
-    drum_verse
+    kick " c 4 4 4 " * 8
+    snare %{
+      4 4 c 4 4 4 c 4
+      4 4 c 4 4 4 c 4
+      4 4 c 4 4 4 c 4
+      4 4 c 4 4 c 4 c
+    }
+    cymbal " 2:c6 " * 16
 
     bass " g2 " * 32
 
@@ -472,6 +491,8 @@ song = Song.new(bloops) do
       bass "c2"
     end
   end
+
+  setup
 
   intro
   verse_instrumental
