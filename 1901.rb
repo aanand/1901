@@ -116,6 +116,12 @@ song = Song.new(bloops) do
     end
   end
 
+  sound :bwoo, Bloops::SQUARE do |s|
+    s.volume = 0.65
+    s.sustain = 1.0
+    s.decay = 0.0
+  end
+
   sound :voice, Bloops::SAWTOOTH do |s|
     s.punch = 0.4
     s.sustain = 0.4
@@ -392,7 +398,7 @@ song = Song.new(bloops) do
     guitar_chorus
   end
 
-  def chorus
+  def chorus_1
     phrase do
       chorus_phrase_1
 
@@ -414,7 +420,9 @@ song = Song.new(bloops) do
         e e e e e f e 4
       }
     end
+  end
 
+  def chorus_2
     phrase do
       chorus_phrase_1
 
@@ -428,6 +436,13 @@ song = Song.new(bloops) do
 
     phrase do
       chorus_phrase_2
+
+      bwoo %{
+        16:c 16:c# 8:d 4:d 2:d 1:d
+        1:d 1:d +
+        16:c 16:c# 8:d 4:d 2:d 1:d
+        1:d 1:d[sustain:0.6] -
+      }
 
       voice %{
         4 4 4 4 4 4 2:g[sustain:0.4]
@@ -498,7 +513,8 @@ song = Song.new(bloops) do
   verse_instrumental
   verse_1
   verse_2
-  chorus
+  chorus_1
+  chorus_2
   post_chorus
   outro_1
   outro_2
