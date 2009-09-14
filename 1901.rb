@@ -414,14 +414,18 @@ song = Song.new(bloops) do
     }
   end
 
+  def short;  "[sustain:0.15]"; end
+  def normal; "[sustain:0.4]";  end
+  def long;   "[sustain:2.0]";  end
+
   def chorus_1
     phrase do
       chorus_phrase_1
 
       voice %{
-        4 4 4 4 4 - g + c c
-        c c c c c   4 - a g
-        4 4 4 4 4   4   2:g[sustain:2.0] +
+        4 4 4          4 4 - g#{short} + c#{normal} c#{short}
+        c c c#{normal} c c   4 -         a          g
+        4 4 4          4 4   4           2:g#{long} +
         1 1
       }
 
@@ -432,10 +436,10 @@ song = Song.new(bloops) do
       chorus_phrase_2
 
       voice %{
-        4 4 4 4 4 4 2:g
-        g[sustain:0.4] e e g g e e 4
-        4 4 4 4 4 4 e d
-        e e e e e f e 4
+        4          4 4 4 4 4         g#{normal} 4
+        g          e e g g e#{short} e#{normal} 4
+        4          4 4 4 4 4         e          d#{short}
+        e#{normal} e e e e f         e          4
       }
     end
   end
@@ -445,10 +449,10 @@ song = Song.new(bloops) do
       chorus_phrase_1
 
       voice %{
-        4 4 4 4 4 - g + c c
-        c c c c c   4 - a + 2:e[sustain:2.0]
-          4 4 4 4   4 - 2:g +
-        1 1
+        4 4         4          4 4 - g + c   c
+        c c#{short} c#{normal} c c   4 - a + 2:e#{long}
+          4         4          4 4   4 - 2:g +
+        1                        1
       }
 
       heyyy_chorus
@@ -465,10 +469,10 @@ song = Song.new(bloops) do
       }
 
       voice %{
-        4 4 4 4 4 4 2:g[sustain:0.4]
-        g[sustain:0.3] e e g g e e 4
-        4 4 4 4 4 c c c
-        c c c[sustain:0.1] c c[sustain:0.3] 4 2:e
+        4 4 4         4 4          4         g#{normal} 4
+        g e e         g g          e#{short} e#{normal} 4
+        4 4 4         4 4          c         c          c
+        c c c#{short} c c#{normal} 4         2:e
       }
     end
   end
