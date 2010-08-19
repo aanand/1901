@@ -1,0 +1,13 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    bloopsaphone (0.4)
+    feepogram (0.0.1)
+      bloopsaphone
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bloopsaphone
+  feepogram
